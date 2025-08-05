@@ -1,17 +1,7 @@
 #
-# Copyright (C) 2020-2025 The LineageOS Project
+# SPDX-FileCopyrightText: The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 COMMON_PATH := device/xiaomi/sm6150-common
@@ -49,17 +39,6 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-
-# HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
-
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/hidl/manifest.xml
-DEVICE_MANIFEST_FILE += hardware/qcom-caf/sm8150/media/conf_files/sm6150/c2_manifest.xml
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
-ODM_MANIFEST_FILES += $(COMMON_PATH)/configs/hidl/manifest-qva.xml
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -110,9 +89,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_BOARD_PLATFORM := sm6150
 
 # Properties
-TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_ODM_PROP += $(COMMON_PATH)/configs/properties/odm.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/configs/properties/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor.prop
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -155,6 +134,19 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
+    vendor/lineage/config/device_framework_matrix.xml
+
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/configs/vintf/manifest.xml \
+    hardware/qcom-caf/sm8150/media/conf_files/sm6150/c2_manifest.xml
+
+DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
+ODM_MANIFEST_FILES += $(COMMON_PATH)/configs/vintf/manifest-qva.xml
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
