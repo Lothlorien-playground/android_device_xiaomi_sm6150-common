@@ -36,6 +36,9 @@ TARGET_NO_BOOTLOADER := true
 # Compression
 PRODUCT_FS_COMPRESSION := 1
 
+# Display
+TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
 
