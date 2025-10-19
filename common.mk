@@ -291,7 +291,6 @@ PRODUCT_PACKAGES += \
     xiaomi-telephony-stub
 
 PRODUCT_BOOT_JARS += \
-    telephony-ext \
     xiaomi-telephony-stub
 
 PRODUCT_COPY_FILES += \
