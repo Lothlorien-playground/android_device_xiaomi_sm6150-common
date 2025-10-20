@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Path to HBM sysfs node -->
+	<string name="config_DisplayFeaturesHbmPath" translatable="false">/sys/devices/platform/soc/soc:qcom,dsi-display/hbm</string>
+
+    <!-- Path to FPS Overlay sysfs node -->
+    <string name="config_DisplayFeaturesFpsPath" translatable="false">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps</string>
+</resources>

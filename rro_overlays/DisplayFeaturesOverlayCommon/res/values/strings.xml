@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Display Features -->
+    <string name="display_features_info">High Brightness Mode (HBM) allows the display panel brightness to go above the maximums stock value. Which helps in improving visibility in direct sunlight.\n\nFPS Overlay shows overlay with current frames per second.</string>
+</resources>
